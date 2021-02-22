@@ -1,5 +1,5 @@
 # Web Tester Tool
-Variety of utilities: whois, website availability, nmap, CMS detector **This tool is for educational purposes only. I am not responsible for illegal users.**
+Variety of utilities: whois, website availability, nmap, CMS detector. **This tool is for educational purposes only. I am not responsible for illegal users.**
 
 ## Installation
 ```
