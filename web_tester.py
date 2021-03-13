@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# Coded by CyberCommands.
+# Coded by CyberCommands
 import os
+import sys
 import nmap
 import time
 import ipwhois
@@ -96,8 +97,11 @@ def main():
         site = input("[*] Enter Target Url: ")
 
         # Wordpress Scanner.
-        print("\n[*] Scan for WordPress...")
-        time.sleep(1.5)
+        start = "\nScan for WordPress... \n"
+        for s in start:
+	        sys.stdout.write(s)
+	        sys.stdout.flush()
+	        time.sleep(0.2)
 
         wpLcheck = requests.get(site + "/wp-login.php")
         if wpLcheck.status_code == 200 and "user_login" in wpLcheck.text and "404" not in wpLcheck.text:
@@ -113,8 +117,11 @@ def main():
             pass
 
         # Joomla Scanner.
-        print("\n[*] Scan for Joomla...")
-        time.sleep(1.5)
+        start = "\nScan for Joomla... \n"
+        for s in start:
+	        sys.stdout.write(s)
+	        sys.stdout.flush()
+	        time.sleep(0.2)
         
         jmAcheck = requests.get(site + "/administrator")
         if jmAcheck.status_code == 200 and "mod-login-username" in jmAcheck.text and "404" not in jmAcheck.text:
@@ -130,8 +137,12 @@ def main():
             pass
 
         # Drupal Scanner.
-        print("\n[*] Scan for Drupal...")
-        time.sleep(1.5)
+        start = "\nScan for Drupal... \n"
+        for s in start:
+	        sys.stdout.write(s)
+	        sys.stdout.flush()
+	        time.sleep(0.2)
+
         drRcheck = requests.get(site + "/readme.txt")
         if drRcheck.status_code == 200 and 'drupal' in drRcheck.text and '404' not in drRcheck.text:
             print("\033[92m[+] Drupal detected: Drupal Readme.txt ➤ \033[0m" + site + '/readme.txt')
@@ -146,8 +157,11 @@ def main():
             pass
 
         # Magento Scanner.
-        print("\n[*] Scan for Magento...")
-        time.sleep(1.5)
+        start = "\nScan for Magento... \n"
+        for s in start:
+	        sys.stdout.write(s)
+	        sys.stdout.flush()
+	        time.sleep(0.2)
 
         mgRcheck = requests.get(site + '/RELEASE_NOTES.txt')
         if mgRcheck.status_code == 200 and 'magento' in mgRcheck.text:
